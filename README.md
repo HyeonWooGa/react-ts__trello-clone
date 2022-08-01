@@ -8,6 +8,8 @@
 
 - ReactJS
 - TypeScript
+- Recoil
+- Styled-Components
 
 ## Scripts
 
