@@ -24,10 +24,23 @@ const Boards = styled.div`
 
 function App() {
   const [toDos, setToDos] = useRecoilState(toDoState);
-  const onDragEnd = ({ draggableId, destination, source }: DropResult) => {
-    // destination 이 없는 경우 처리
-    if (!destination) return;
-    // console.log(args);
+  const onDragEnd = (info: DropResult) => {
+    console.log(info);
+    const { destination, draggableId, source } = info;
+    if (destination?.droppableId === source.droppableId) {
+      // same board movement.
+      setToDos((allBoards) => {
+        const boardCopy = [...allBoards[source.droppableId]];
+        // 1) Deldte item on source.index
+        boardCopy.splice(source.index, 1);
+        // 2) Put back the item on the destination.index
+        boardCopy.splice(destination?.index, 0, draggableId);
+        return {
+          ...allBoards,
+          [source.droppableId]: boardCopy,
+        };
+      });
+    }
     /*setToDos((oldToDos) => {
       const toDosCopy = [...oldToDos];
       // 1) Deldte item on source.index
