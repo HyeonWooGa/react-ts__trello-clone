@@ -7,6 +7,7 @@ const Card = styled.div`
   border-radius: 5px;
   padding: 10px 10px;
   margin-bottom: 5px;
+  font-weight: 400;
 `;
 
 interface IDraggableCardProps {
