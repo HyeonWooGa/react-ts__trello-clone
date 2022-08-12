@@ -27,7 +27,8 @@ function App() {
   const onDragEnd = (info: DropResult) => {
     console.log(info);
     const { destination, draggableId, source } = info;
-    if (destination?.droppableId === source.droppableId) {
+    if (!destination) return;
+    if (destination.droppableId === source.droppableId) {
       // same board movement.
       setToDos((allBoards) => {
         const boardCopy = [...allBoards[source.droppableId]];
