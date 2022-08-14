@@ -24,7 +24,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +48,8 @@
   },
   "devDependencies": {
     "@types/react-beautiful-dnd": "^13.1.2",
-    "@types/styled-components": "^5.1.25"
-  }
+    "@types/styled-components": "^5.1.25",
+    "gh-pages": "^4.0.0"
+  },
+  "homepage": "https://hyeonwooga.github.io/react-ts__trello-clone"
 }
