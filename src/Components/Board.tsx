@@ -17,7 +17,7 @@ interface IAreaProps {
   isDraggingOver: boolean;
 }
 
-const Area = styled.div<IAreaProps>`
+export const Area = styled.div<IAreaProps>`
   background-color: ${(props) =>
     props.isDraggingOver
       ? "#dfe6e9"
